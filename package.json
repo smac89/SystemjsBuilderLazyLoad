@@ -3,7 +3,7 @@
   "name": "ASP.NET",
   "private": true,
   "scripts": {
-    "start": "http-server -p 8900"
+    "start": "http-server"
   },
   "dependencies": {
     "@angular/common": "2.0.0",

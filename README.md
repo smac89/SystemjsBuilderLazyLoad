@@ -4,7 +4,7 @@ Workflow
 
 1 clone the respository git clone https://github.com/abidmix/SystemjsBuilderLazyLoad.git
 
-2. cd into project directory **cd c:\example**
+2. cd into project directory **cd c:\SystemjsBuilderLazyLoad**
 
 3. run **npm install**
 

@@ -10,7 +10,7 @@ Workflow
 
 4. run **tsc** to transpile files into bundled folder
 
-5. run **gulp appbundle** You will see an Error: Unable to import "@angular/platform-browser-dynamic". The incorrect instance of System is being used to System.import. The application will just bundle fine. Will report this issue to the authour on github.
+5. run **gulp appbundle** 
 
 
 6. run npm start

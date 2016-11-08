@@ -1,8 +1,8 @@
-﻿"use strict";
+"use strict";
 var gulp = require('gulp');
 var Builder = require('systemjs-builder');
 var path = require("path");
-var config = {
+/**var config = {
   transpiler: 'babel',
   typescriptOptions: {
     module: 'cjs'
@@ -20,18 +20,14 @@ var config = {
     'node_modules/rxjs/*': { build: false }
   },
 };
-
+*/
 
 gulp.task('appbundle', function() {
-    var builder = new Builder();
-    builder.loadConfigSync('./systemjs.config.js')
-     builder.config(config);
+    var builder = new Builder('./','./systemjs.config.js');
+    //builder.loadConfigSync('./systemjs.config.js')
+     //builder.config(config);
     builder.buildStatic('build/app.module','bundled/app.module.min.js',{
         minify: true,
         mangle: false
     })
 });
-
-
-
- 

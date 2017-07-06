@@ -9,8 +9,12 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-	"outDir": "./bundled",
-    "rootDir": "./app"
+	"outDir": "./build",
+    "rootDir": "./app",
+    "lib": [
+        "es6",
+        "dom"
+    ]
   },
    "exclude": [
         "node_modules"

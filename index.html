@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Set the base href -->
-    <script>document.write('<base href="' + document.location + '" />');</script>
+    <base href="/">
     <title>Router Sample</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,15 +16,17 @@
     <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
 
-    <script src="system.config.js"></script>
-    <script>
-      System.import('app')
+    <!-- <script src="system.config.js"></script> -->
+
+    <!-- <script>
+      SystemJS.import('app')
             .catch(function(err){ console.error(err); });
-    </script>
+    </script> -->
   </head>
 
   <body>
     <my-app>loading...</my-app>
+    <script src='bundled/app.module.min.js'></script>
   </body>
 
 </html>

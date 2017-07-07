@@ -3,3 +3,4 @@ build/
 bundled/
 browserconfig.xml
 manifest.json
+aot/

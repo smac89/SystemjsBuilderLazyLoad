@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard }          from './auth-guard.service';
 import { PreloadSelectedModules } from './selective-preload-strategy';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       {
         path: 'admin',
-        loadChildren: 'app/admin/admin.module#AdminModule',
+        loadChildren: () => AdminModule,
         canLoad: [AuthGuard]
       },
       {
@@ -20,7 +22,7 @@ import { PreloadSelectedModules } from './selective-preload-strategy';
       },
       {
         path: 'crisis-center',
-        loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+        loadChildren: () => CrisisCenterModule,
         data: {
           preload: false
         }

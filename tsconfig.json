@@ -9,14 +9,15 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-	"outDir": "./build",
-    "rootDir": "./app",
+	"outDir": "build",
+    "rootDir": "src",
     "lib": [
         "es6",
         "dom"
     ]
   },
    "exclude": [
+        "src/main.ts",
         "node_modules"
     ]
 }

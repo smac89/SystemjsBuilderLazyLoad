@@ -17,7 +17,6 @@
     ]
   },
    "exclude": [
-        "src/main.ts",
         "node_modules"
     ]
 }

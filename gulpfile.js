@@ -31,13 +31,11 @@ let project = tsc.createProject('tsconfig.json');
 
 
 gulp.task('clean:all', ['clean'], function () {
-    return del([
-        'bundled/*', 'aot/*',
-    ]);
+    return del('bundled/*');
 });
 
 gulp.task('clean', function () {
-    return del([project.options.outDir, aotProject.options.outDir]);
+    return del(project.options.outDir);
 });
 
 gulp.task('compile', function () {

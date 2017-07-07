@@ -31,7 +31,6 @@
         map: {
             // our app is within the app folder
             app: 'bundled',
-            'build:aot': 'aot-build',
 
             // other libraries
             rxjs: 'npm:rxjs',
@@ -41,19 +40,12 @@
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
             app: {
-                main: 'app.module.min',
-                defaultExtension: 'js'
+                main: 'src/main',
+                defaultExtension: 'ts'
             },
             build: {
-                main: 'main-jit',
-                defaultExtension: 'js'
-            },
-            'build:aot': {
                 main: 'main',
-                defaultExtension: 'ts'
-            },
-            aot: {
-                defaultExtension: 'ts'
+                defaultExtension: 'js'
             },
             src: {
                 defaultExtension: 'ts'

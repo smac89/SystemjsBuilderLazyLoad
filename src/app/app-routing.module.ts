@@ -13,10 +13,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
     RouterModule.forRoot([
       {
         path: 'admin',
-        loadChildren: () => {
-          const AdminModule = require('./admin/admin.module').AdminModule;
-          return AdminModule;
-        },
+        loadChildren: 'app/admin/admin.module#AdminModule',
         canLoad: [AuthGuard]
       },
       {
@@ -26,7 +23,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
       },
       {
         path: 'crisis-center',
-        loadChildren: () => CrisisCenterModule,
+        loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
         data: {
           preload: false
         }

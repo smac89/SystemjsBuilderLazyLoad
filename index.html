@@ -13,20 +13,17 @@
     <script src="node_modules/core-js/client/shim.min.js"></script>
 
     <script src="node_modules/zone.js/dist/zone.min.js"></script>
-    <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
-
-    <!-- <script src="system.config.js"></script> -->
-
-    <!-- <script>
-      SystemJS.import('app')
-            .catch(function(err){ console.error(err); });
-    </script> -->
   </head>
 
   <body>
     <my-app>loading...</my-app>
-    <script src='bundled/app.module.min.js'></script>
+
+    <!-- app:js -->
+    <script src="/bundled/app.module.min.js"></script>
+    <script src="/bundled/system.config.js"></script>
+    <!-- endinject -->
   </body>
 
 </html>

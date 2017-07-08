@@ -5,6 +5,9 @@ const path = require('path');
 const tsc = require('gulp-typescript');
 const runseq = require('run-sequence');
 const del = require('del');
+const Transform = require('stream').Transform;
+const gutil = require('gulp-util');
+const inject = require('gulp-inject');
 // const gutil = require('gulp-util');
 
 /**var config = {
@@ -45,20 +48,37 @@ gulp.task('compile', function () {
 });
 
 gulp.task('appbundle', function () {
-    var builder = new Builder('./', './system.config.js');
-    return builder.buildStatic('build/', {
-        minify: true,
-        static: true,
-        rollup: false,
-        runtime: true,
-        outputESM: false,
-        mangle: false,
-        format: 'umd',
-        outFile: 'bundled/app.module.min.js'
-    }).then(function (output) {
-        console.log(output.modules);
-    });
+    if (process.env.PROD || process.env.PRODUCTION) {
+        var builder = new Builder('./', './system.config.js');
+        return builder.buildStatic('build/**/*', {
+            minify: true,
+            static: true,
+            rollup: true,
+            runtime: true,
+            mangle: false,
+            format: 'umd',
+            outFile: 'bundled/app.module.min.js'
+        }).then(function (output) {
+            console.log(output.modules.filter(m => m.search(/admin/g) != -1));
+        });
+    } else {
+        return gulp.src('system.config.js')
+        .pipe(new Transform({
+            objectMode: true,
+            transform: (file, enc, callback) => {
+                file = new gutil.File({
+                    contents: file.contents,
+                    path: 'app.module.min.js'
+                });
+                // process.stdout.write(file.cwd + '\n');
+                // file.path = path.join(file.cwd, 'app.module.min.js');
+                callback(null, file);
+            }
+        })).pipe(gulp.dest('bundled'));
+    }
+    
 });
+
 
 gulp.task('default', function (done) {
     runseq('clean:all', 'compile', 'appbundle', done);

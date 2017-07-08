@@ -4,9 +4,6 @@ import { RouterModule } from '@angular/router';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard }          from './auth-guard.service';
 import { PreloadSelectedModules } from './selective-preload-strategy';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
-
-// declare function require(moduleName: string): any;
 
 @NgModule({
   imports: [

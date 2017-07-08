@@ -44,19 +44,6 @@
 
     if (global.process && (global.process.env.PROD || global.process.env.PRODUCTION)) {
         // production specific
-        // CONFIG.depCache = Object.assign(CONFIG.depCache, {
-        //     'build/main.js': [
-        //         // 'admin/admin.module.js',
-        //         'build/app/admin/admin.module.js'
-        //         // 'app/admin/admin.module.js'
-        //     ]
-        // });
-
-        // CONFIG.meta = Object.assign(CONFIG.meta, {
-        //     'build/app/admin/admin.module.js': {
-        //         build: true
-        //     }
-        // });
 
     } else {
         // Non production stuff

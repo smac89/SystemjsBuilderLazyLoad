@@ -4,3 +4,4 @@ bundled/
 browserconfig.xml
 manifest.json
 aot/
+angular-lazy-loader/

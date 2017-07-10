@@ -1,4 +1,5 @@
 'use strict';
+
 const gulp = require('gulp');
 const Builder = require('systemjs-builder');
 const path = require('path');
@@ -33,6 +34,7 @@ gulp.task('appbundle', function () {
             var builder = new Builder('./', './system.config.js');
             return builder.buildStatic('build', {
                 minify: true,
+                uglify: { compress: false },
                 static: true,
                 rollup: true,
                 runtime: true,

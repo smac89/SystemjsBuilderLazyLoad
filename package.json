@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "4.2.4",
+    "acorn": "^5.1.1",
     "browser-sync": "2.18.12",
     "del": "2.2.2",
     "gulp": "3.9.1",

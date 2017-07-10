@@ -24,6 +24,7 @@
         map: {
             // other libraries
             rxjs: 'npm:rxjs',
+            'ng-bundle': 'npm:ng-bundle/dist/plugin.js',
 
             // our app is within the build folder
             app: 'build/app'
@@ -44,6 +45,11 @@
 
     if (global.process && (global.process.env.PROD || global.process.env.PRODUCTION)) {
         // production specific
+        CONFIG.meta = Object.assign(CONFIG.meta, {
+            '*.module.js': {
+                loader: 'ng-bundle'
+            }
+        });
 
     } else {
         // Non production stuff
